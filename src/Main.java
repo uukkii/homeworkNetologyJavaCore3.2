@@ -45,7 +45,7 @@ public class Main {
         try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(dir))) {
             for (String save : savesList) {
                 FileInputStream fis = new FileInputStream(save);
-                ZipEntry entry = new ZipEntry(save);
+                ZipEntry entry = new ZipEntry(save.substring(25));
                 zos.putNextEntry(entry);
                 byte[] buffer = new byte[fis.available()];
                 fis.read(buffer);
